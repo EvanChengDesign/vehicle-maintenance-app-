@@ -18,7 +18,7 @@ router.param('model', (req, res, next) => {
   }
 });
 
-// ---- /api/v1/food
+// ---- /api/v2/model name
 //      "food" is the :model parameter
 router.get('/:model', bearerAuth, permissions("read"), handleGetAll);
 router.get('/:model/:id', bearerAuth, permissions("read"), handleGetOne);

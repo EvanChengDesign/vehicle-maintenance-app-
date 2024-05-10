@@ -4,6 +4,8 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 const clothesModel = require('./clothes/model.js');
 const foodModel = require('./food/model.js');
+const vehicleModel = require('./vehicles/model.js');
+const partsModel = require('./parts/model.js')
 
 const userModel = require('../auth/models/users.js');
 
@@ -20,6 +22,8 @@ const clothes = clothesModel(sequelize, DataTypes);
 module.exports = {
   db: sequelize,
   users: userModel(sequelize, DataTypes),
+  vehicles: vehicleModel(sequelize, DataTypes),
+  parts: partsModel(sequelize, DataTypes),
   food: new Collection(food),
   clothes: new Collection(clothes),
 };
