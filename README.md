@@ -1,16 +1,10 @@
 # Vehicle Maintenance Application
 Vehicle Maintenance App that utilizes CRUD methods, ACL, Authentication, and SQL tables.
 
-Author: Evan Cheng & Wajiha Khan
 
-Version: 1.0.0
-
-## Application Diagram:
-
-![UML](./Images/VM-APP-UML.png)
-
-# Project Overview
-
+# Project Overview  
+#### Author: Evan Cheng & Wajiha Khan
+#### Version: 1.0.0
 ---
 
 ## Introduction
@@ -18,6 +12,12 @@ Version: 1.0.0
 This project aims to develop a comprehensive vehicle maintenance management system to streamline vehicle records, maintenance logs, and parts inventory for automotive service centers. The system will support multiple user roles including Admin, Mechanic, and Car Owner, each with specific functionalities and access levels.
 
 ---
+
+## Application Diagram
+
+![UML](./Images/VM-APP-UML.png)
+
+---  
 
 ## Key Features
 
@@ -86,7 +86,7 @@ To set up the project locally:
 
 1. Clone the repository.
 2. Install dependencies using `npm install`.
-3. Set up the MongoDB database.
+3. Set up the postgresQL database.
 4. Configure environment variables.
 5. Run the application using `npm start`.
 
@@ -107,7 +107,3 @@ This project is licensed under the [MIT License](./LICENSE).
 ## Acknowledgements
 
 Special thanks to all contributors and open-source projects that made this endeavor possible.
-
----
-
-Feel free to reach out with any questions or feedback. Happy coding! 🚀

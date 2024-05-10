@@ -3,17 +3,9 @@
 const express = require('express');
 const dataModules = require('../models');
 
-/*
-  {
-    db: sequelize,
-    food: {Collection}
-    clothes: {Collection}
-  }
-*/
-
 const router = express.Router();
 
-// /api/vi/food
+// /api/v1/food
 router.param('model', (req, res, next) => {
   const modelName = req.params.model; // food
   // dataModules[food] is the foodCollection from above
