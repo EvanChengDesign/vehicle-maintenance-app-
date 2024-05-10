@@ -1,3 +1,4 @@
+// DON'T NEED AUTH TO ACCESS ROUTES
 'use strict';
 
 const express = require('express');

@@ -21,9 +21,9 @@ app.use(express.json());
 app.use(logger);
 
 // Custom Routes
-app.use('/auth', authRoutes);
-app.use('/api/v1', v1Routes);
-app.use('/api/v2', v2Routes);
+app.use('/auth', authRoutes); // access users
+app.use('/api/v1', v1Routes); // no authentication
+app.use('/api/v2', v2Routes); // bearer authentication
 
 // Error Handlers
 app.use('*', notFoundHandler);
