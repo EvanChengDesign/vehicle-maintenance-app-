@@ -1,3 +1,5 @@
+// HAVE TO HAVE BEARER TO ACCESS
+
 'use strict';
 
 const express = require('express');
