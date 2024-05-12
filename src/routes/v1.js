@@ -9,7 +9,6 @@ const router = express.Router();
 // /api/v1/food
 router.param('model', (req, res, next) => {
   const modelName = req.params.model; // food
-  // dataModules[food] is the foodCollection from above
   if (dataModules[modelName]) {
     req.model = dataModules[modelName];
     next();

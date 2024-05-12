@@ -7,7 +7,7 @@ const corsOptions = {
   origin: 'https://vehicle-maintenance.netlify.app', // Adjust this to match your front-end URL
   optionsSuccessStatus: 200
 };
-app.use(cors(corsOptions));
+
 
 
 const notFoundHandler = require('./error-handlers/404.js');
@@ -20,7 +20,7 @@ const v2Routes = require('./routes/v2.js');
 
 const app = express();
 
-
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Custom Middleware
