@@ -52,6 +52,7 @@ class DataCollection {
 
   async delete(id) {
     try {
+      console.log('starting deletion');
       const deletedCount = await this.model.destroy({ where: { id } });
       if (deletedCount > 0) {
         return { success: true, message: 'Record deleted successfully' };
