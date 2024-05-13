@@ -3,10 +3,10 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const corsOptions = {
-  origin: 'https://vehicle-maintenance.netlify.app', // Adjust this to match your front-end URL
-  optionsSuccessStatus: 200
-};
+// const corsOptions = {
+//   origin: 'https://vehicle-maintenance.netlify.app', // Adjust this to match your front-end URL
+//   optionsSuccessStatus: 200
+// };
 
 
 
@@ -20,7 +20,7 @@ const v2Routes = require('./routes/v2.js');
 
 const app = express();
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 // Custom Middleware
@@ -28,7 +28,7 @@ app.use(logger);
 
 // Custom Routes
 app.use('/auth', authRoutes); // access users
-app.use('/api/v1', v1Routes); // no authentication
+// app.use('/api/v1', v1Routes); // no authentication
 app.use('/api/v2', v2Routes); // bearer authentication
 
 // Error Handlers

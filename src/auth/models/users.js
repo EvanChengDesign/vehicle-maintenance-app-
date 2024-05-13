@@ -9,11 +9,11 @@ const userModel = (sequelize, DataTypes) => {
   const model = sequelize.define('Users', {
     username: { type: DataTypes.STRING, required: true, unique: true },
     password: { type: DataTypes.STRING, required: true },
-    role: { type: DataTypes.ENUM('owner', 'mechanic', 'admin'), required: true, defaultValue: 'owner'},
+    role: { type: DataTypes.ENUM('customer', 'mechanic', 'admin'), required: true, defaultValue: 'customer'},
     token: {
       type: DataTypes.VIRTUAL,
       get() {
-        return jwt.sign({ username: this.username }, SECRET);
+        return jwt.sign({ username: this.username, role: this.role }, SECRET);
       },
       set(tokenObj) {
         let token = jwt.sign(tokenObj, SECRET);
@@ -24,7 +24,7 @@ const userModel = (sequelize, DataTypes) => {
       type: DataTypes.VIRTUAL,
       get() {
         const acl = {
-          owner: ['read', 'create'],
+          customer: ['read', 'create'],
           mechanic: ['read', 'create', 'update'],
           admin: ['read', 'create', 'update', 'delete']
         };
