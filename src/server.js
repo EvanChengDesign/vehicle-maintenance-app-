@@ -3,10 +3,6 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-// const corsOptions = {
-//   origin: 'https://vehicle-maintenance.netlify.app', // Adjust this to match your front-end URL
-//   optionsSuccessStatus: 200
-// };
 
 
 
