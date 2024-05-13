@@ -3,6 +3,12 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+// const corsOptions = {
+//   origin: 'https://vehicle-maintenance.netlify.app', // Adjust this to match your front-end URL
+//   optionsSuccessStatus: 200
+// };
+
+
 
 const notFoundHandler = require('./error-handlers/404.js');
 const errorHandler = require('./error-handlers/500.js');
@@ -22,7 +28,7 @@ app.use(logger);
 
 // Custom Routes
 app.use('/auth', authRoutes); // access users
-app.use('/api/v1', v1Routes); // no authentication
+// app.use('/api/v1', v1Routes); // no authentication
 app.use('/api/v2', v2Routes); // bearer authentication
 
 // Error Handlers

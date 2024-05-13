@@ -21,7 +21,6 @@ router.param('model', (req, res, next) => {
 });
 
 // ---- /api/v2/model name
-//      "food" is the :model parameter
 router.get('/:model', bearerAuth, permissions("read"), handleGetAll);
 router.get('/:model/:id', bearerAuth, permissions("read"), handleGetOne);
 router.post('/:model', bearerAuth, permissions("create"), handleCreate);
@@ -29,7 +28,6 @@ router.put('/:model/:id', bearerAuth, permissions("update"), handleUpdate);
 router.delete('/:model/:id', bearerAuth, permissions("delete"), handleDelete);
 
 async function handleGetAll(req, res) {
-  // Food.get or Clothes.get
   let allRecords = await req.model.get();
   res.status(200).json(allRecords);
 }

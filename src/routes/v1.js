@@ -6,10 +6,8 @@ const dataModules = require('../models');
 
 const router = express.Router();
 
-// /api/v1/food
 router.param('model', (req, res, next) => {
-  const modelName = req.params.model; // food
-  // dataModules[food] is the foodCollection from above
+  const modelName = req.params.model; 
   if (dataModules[modelName]) {
     req.model = dataModules[modelName];
     next();
@@ -18,8 +16,6 @@ router.param('model', (req, res, next) => {
   }
 });
 
-// ---- /api/v1/food
-//      "food" is the :model parameter
 router.get('/:model', handleGetAll);
 router.get('/:model/:id', handleGetOne);
 router.post('/:model', handleCreate);
@@ -27,7 +23,6 @@ router.put('/:model/:id', handleUpdate);
 router.delete('/:model/:id', handleDelete);
 
 async function handleGetAll(req, res) {
-  // Food.get or Clothes.get
   let allRecords = await req.model.get();
   res.status(200).json(allRecords);
 }
